@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "EffectiveMobileTestApp"
 include ':app'
+include ':api'
+include ':entities'
