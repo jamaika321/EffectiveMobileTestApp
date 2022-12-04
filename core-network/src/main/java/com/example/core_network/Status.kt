@@ -1,4 +1,4 @@
-package com.example.effectivemobiletestapp.remote.api
+package com.example.core_network
 
 enum class Status {
     LOADING,

@@ -1,4 +1,4 @@
-package com.example.effectivemobiletestapp.remote.api
+package com.example.core_network
 
 import com.google.gson.Gson
 import okhttp3.OkHttpClient

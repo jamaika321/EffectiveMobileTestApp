@@ -16,3 +16,5 @@ rootProject.name = "EffectiveMobileTestApp"
 include ':app'
 include ':api'
 include ':entities'
+include ':feature-homestore'
+include ':core-network'

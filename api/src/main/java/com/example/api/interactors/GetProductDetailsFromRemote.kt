@@ -7,9 +7,10 @@ import com.example.entities.AsyncUseCase
 import com.example.entities.Either
 import com.example.entities.None
 import retrofit2.Call
+import retrofit2.Response
 
 class GetProductDetailsFromRemote(private val repository: Repository)
-    : AsyncUseCase<Call<ProductDetails>, None, Failure>() {
+    : AsyncUseCase<Response<ProductDetails>, None, Failure>() {
     override suspend fun run(params: None)
-    : Either<Failure, Call<ProductDetails>> = repository.getProductDetails()
+    : Either<Failure, Response<ProductDetails>> = repository.getProductDetailsFromRemote()
 }

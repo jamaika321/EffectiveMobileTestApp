@@ -6,9 +6,9 @@ import com.example.api.type.Failure
 import com.example.entities.AsyncUseCase
 import com.example.entities.Either
 import com.example.entities.None
-import retrofit2.Call
+import retrofit2.Response
 
-class GetHomePageFromRemote(private val repository: Repository): AsyncUseCase<Call<HomePage>, None, Failure>() {
+class GetHomePageFromRemote(private val repository: Repository): AsyncUseCase<Response<HomePage>, None, Failure>() {
     override suspend fun run(params: None):
-            Either<Failure, Call<HomePage>> = repository.getHomePageFromRemote()
+            Either<Failure, Response<HomePage>> = repository.getHomePageFromRemote()
 }

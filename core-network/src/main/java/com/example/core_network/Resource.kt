@@ -1,4 +1,4 @@
-package com.example.effectivemobiletestapp.remote.api
+package com.example.core_network
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
     companion object {
