@@ -29,9 +29,9 @@ class BestSellerAdapter: ListAdapter<BestSellers, RecyclerView.ViewHolder>(BestS
 
     inner class BestSellersItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val itemImage: ImageView = itemView.findViewById(R.id.iv_item)
-        private val oldPrice: TextView = itemView.findViewById(R.id.new_price)
-        private val itemName: TextView = itemView.findViewById(R.id.old_price)
-        private val newPrice: TextView = itemView.findViewById(R.id.item_name)
+        private val oldPrice: TextView = itemView.findViewById(R.id.old_price)
+        private val itemName: TextView = itemView.findViewById(R.id.item_name)
+        private val newPrice: TextView = itemView.findViewById(R.id.new_price)
         fun bind(bestSellerItem: BestSellers) {
             with(itemView) {
                 Picasso.get()

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.api.models.BestSellers
@@ -20,19 +21,13 @@ import javax.inject.Inject
 
 class HomeStoreFragment : BaseFragment<HomeStoreViewModel, FragmentHomeStoreBinding>(HomeStoreViewModel::class.java) {
 
-    private lateinit var homeStoreBinding: FragmentHomeStoreBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        homeStoreBinding = FragmentHomeStoreBinding.inflate(inflater, container, false)
-
+    override fun initVars() {
+        super.initVars()
         viewModel.loadHomePage()
         initViewModelVars()
-
-        return homeStoreBinding.root
     }
+
 
     private fun initViewModelVars(){
         viewModel.bestSellersList.launchWhenStarted(lifecycleScope) {
@@ -46,8 +41,8 @@ class HomeStoreFragment : BaseFragment<HomeStoreViewModel, FragmentHomeStoreBind
 
     private fun setupBestSellersList(bestSellersList: List<BestSellers>) {
         val bestSellersAdapter = BestSellerAdapter()
-        with(homeStoreBinding.bestSellersRcView) {
-            layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        with(viewBinding.bestSellersRcView) {
+            layoutManager = GridLayoutManager(context, 2)
             adapter = bestSellersAdapter
         }
         bestSellersAdapter.submitList(bestSellersList)

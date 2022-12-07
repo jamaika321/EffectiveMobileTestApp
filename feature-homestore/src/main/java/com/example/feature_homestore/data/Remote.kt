@@ -7,6 +7,6 @@ import com.example.entities.Either
 import retrofit2.Response
 
 interface Remote {
-    fun getHomePage(): Either<Failure, Response<HomePage>>
+    suspend fun getHomePage(): Either<Failure, Response<HomePage>>
     fun getProductDetails(): Either<Failure, Response<ProductDetails>>
 }

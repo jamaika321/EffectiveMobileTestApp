@@ -8,6 +8,6 @@ import retrofit2.Call
 import retrofit2.Response
 
 interface Repository {
-    fun getHomePageFromRemote(): Either<Failure, Response<HomePage>>
+    suspend fun getHomePageFromRemote(): Either<Failure, Response<HomePage>>
     fun getProductDetailsFromRemote(): Either<Failure, Response<ProductDetails>>
 }

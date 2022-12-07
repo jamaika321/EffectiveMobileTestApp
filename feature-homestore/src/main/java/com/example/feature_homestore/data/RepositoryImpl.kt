@@ -12,7 +12,7 @@ import javax.inject.Inject
 class RepositoryImpl @Inject constructor(
     private val remote: Remote
 ): Repository {
-    override fun getHomePageFromRemote(): Either<Failure, Response<HomePage>> = remote.getHomePage()
+    override suspend fun getHomePageFromRemote(): Either<Failure, Response<HomePage>> = remote.getHomePage()
 
     override fun getProductDetailsFromRemote(): Either<Failure, Response<ProductDetails>> = remote.getProductDetails()
 }

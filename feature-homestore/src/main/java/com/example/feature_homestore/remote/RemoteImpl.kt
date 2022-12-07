@@ -10,7 +10,7 @@ import com.example.feature_homestore.data.Remote
 import retrofit2.Response
 
 class RemoteImpl: Remote {
-    override fun getHomePage(): Either<Failure, Response<HomePage>> {
+    override suspend fun getHomePage(): Either<Failure, Response<HomePage>> {
         return Either.Right(RetrofitBuilder.makeService<ApiService>(true).getHomePage())
     }
 

@@ -18,7 +18,7 @@ class App : BaseApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.create()
+        appComponent = DaggerAppComponent.builder().build()
     }
 
     override fun provideComponent(type: Class<out BaseDaggerComponent>): BaseDaggerComponent {
